@@ -18,7 +18,6 @@ sax_time = sax.get_time()
 print(f"\n\n------------------------------- \n> DOM Time: {dom_time} \n> SAX Time: {sax_time} \n -------------------------------")
 
 with open('dom_estabelecimentos.geojson', 'w') as f:
-
     feature_collection = geojson.FeatureCollection([])
 
     for estabelecimento in dom.get_data():
@@ -26,9 +25,9 @@ with open('dom_estabelecimentos.geojson', 'w') as f:
         feature_collection['features'].append(feature)
 
     geojson.dump(feature_collection, f)
+print("\n-- GENERATED DOM GEOJSON")
 
 with open('sax_estabelecimentos.geojson', 'w') as f:
-
     feature_collection = geojson.FeatureCollection([])
 
     for estabelecimento in sax.get_data():
@@ -36,3 +35,4 @@ with open('sax_estabelecimentos.geojson', 'w') as f:
         feature_collection['features'].append(feature)
 
     geojson.dump(feature_collection, f)
+print("\n-- GENERATED DOM GEOJSON")
