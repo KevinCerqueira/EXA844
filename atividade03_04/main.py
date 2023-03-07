@@ -35,4 +35,4 @@ with open('sax_estabelecimentos.geojson', 'w') as f:
         feature_collection['features'].append(feature)
 
     geojson.dump(feature_collection, f)
-print("\n-- GENERATED DOM GEOJSON")
+print("\n-- GENERATED SAX GEOJSON")
