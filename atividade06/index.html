@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>EXA844 - ATV06</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2;
+            }
+            
+            h1 {
+                text-align: center;
+                font-size: 24px;
+            }
+            
+            hr {
+                border: 1px solid #ccc;
+                margin-bottom: 20px;
+            }
+            
+            label {
+                display: block;
+                margin-bottom: 10px;
+            }
+            
+            input[type="text"], textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-bottom: 20px;
+            }
+            
+            input[type="submit"], input[type="reset"] {
+                background-color: #4CAF50;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-right: 10px;
+            }
+            
+            input[type="submit"]:hover, input[type="reset"]:hover {
+                background-color: #3e8e41;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>EXA844 ATIVIDADE 06</h1>
+        <hr>
+        <form method="GET" action="http://192.168.0.102:8000/cgi-bin/get.py">
+            <label for="nome">Remetente:</label>
+            <input type="text" id="nome" name="nome" placeholder="">
+            
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="end" placeholder=""></textarea>
+            
+            <input type="submit" value="Enviar">
+        </form>
+    </body>
+</html>
