@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <base target="_top">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>                      
+  </head>
+ 
+  <body>
+    <div class="container">
+      <h4>Envie uma mensagem</h4>            
+      <HR><br>
+      <form method="GET" action="https://script.google.com/macros/s/AKfycbwMJLMXJwPr30nUPMFsbmo0p01r2r7U49bb8ictVSzTtJdwKnsF8en6T_vatl2PSw50/exec">
+       Mensagem:<input type="text" size=64 name="message" value=""><br>
+       Autor:<input type="text" size=64 name="author" value=""><br>
+       <br>     
+        <input type="submit"> <input type="reset">
+      </form>
+
+      <h4>Mensagens do Blog</h4>      
+      <div class="row">
+        <table>
+        <thead>
+          <tr>              
+              <th style="width: 30%">Autor</th>
+              <th style="width: 60%">Mensagem</th>              
+              <th style="width: 10%">Envio</th>              
+          </tr>
+        </thead>
+        <tbody id="table-body">          
+        </tbody>
+      </table>
+      </div>
+    </div>  
+    <script>
+      google.script.run.withSuccessHandler(generate).getMessages();
+
+      function generate(jsonArray){
+        var tBody = document.getElementById("table-body");      
+
+        var data = JSON.parse(jsonArray);
+        
+        data.forEach(function(row){     
+          if (row) {        
+            var tRow = document.createElement("tr");        
+            for(var i=0; i<row.length; i++){      
+              var tCol = document.createElement("td");              
+              tCol.textContent = row[i];                       
+              tRow.appendChild(tCol);          
+            }            
+            tBody.appendChild(tRow);     
+          }
+        });
+      }
+    </script>
+  </body>  
+</html>
