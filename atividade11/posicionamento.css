@@ -1,0 +1,48 @@
+html, body {
+	height: 100%;
+	margin: 3;
+	padding: 0;
+	font-family: "Fira Code", Helvetica;
+	font-weight: bolder;
+  }
+  
+  div {
+	position: absolute;
+	padding: 1em;
+	box-sizing: border-box;
+  }
+  
+  .esqcima {
+	top: 0;
+	left: 0;
+	background-color: #f1c40f;
+  }
+  
+  .esqbaixo {
+	bottom: 0;
+	left: 0;
+	background-color: #3498db;
+  }
+  
+  .dircima {
+	top: 0;
+	right: 0;
+	background-color: #2ecc71;
+  }
+  
+  .dirbaixo {
+	bottom: 0;
+	right: 0;
+	background-color: #e74c3c;
+  }
+  
+  @media (max-width: 800px) {
+	.esqcima, .esqbaixo, .dircima, .dirbaixo {
+	  position: static;
+	  width: 100%;
+	  margin-bottom: 10px;
+	  border-radius: 10px;
+	  text-align: center;
+	}
+  }
+  

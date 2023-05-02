@@ -11,7 +11,7 @@
       <h1>Tempo Restante da Sessão</h1>
       <p>Sua sessão expirará em {{ minutes }} minutos e {{ seconds }} segundos.</p>
       <p>Veze que atualizou a página: {{counter}}</p>
-      <p>Primeira vez que visitou a página: {{count}}</p>
+      <p>Primeira vez que visitou a página: {{date_log}}</p>
       <form action="{{ url_for('index') }}" method="get">
         <input name="counter" type="hidden" value="{{ counter }}">
         <button type="submit">atualizar</button>

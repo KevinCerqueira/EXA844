@@ -27,14 +27,14 @@ def home():
 @app.route('/')
 def index():
     if 'logged_in' in session and session['logged_in']:
-        counter_value = request.args.get('counter',default=0, type=int) + 1
+        counter = request.args.get('counter',default=0, type=int) + 1
         time_remaining = app.config['PERMANENT_SESSION_LIFETIME'] - (datetime.now(timezone.utc) - session['login_time'])
         minutes, seconds = divmod(time_remaining.seconds, 60)
-        count = request.cookies.get('count')
-        resp = make_response(render_template('index.html', minutes=minutes, seconds=seconds, count=count, counter=counter_value))
+        date_log = request.cookies.get('date_log')
+        resp = make_response(render_template('index.html', minutes=minutes, seconds=seconds, date_log=date_log, counter=counter))
         
-        if(count == '' or count is None):
-            resp.set_cookie('count', str(datetime.now(timezone.utc)))
+        if(date_log == '' or date_log is None):
+            resp.set_cookie('date_log', str(datetime.now(timezone.utc)))
             
         return resp
     else:
